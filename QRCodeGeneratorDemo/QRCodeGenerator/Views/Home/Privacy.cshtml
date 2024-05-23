@@ -1,0 +1,15 @@
+﻿@model QrCodeInputText;
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Private" asp-controller="Home" method="post">
+
+    <img src="@Model.CombinedPart" alt="Alternate Text" width="300" height="300" title="@Model.ImageAddress" />
+
+    <input type="text" name="@Model.Text" asp-for="@Model.Text" title="@Model.ImageAddress" />
+    <p>@Model.CombinedPart </p>
+
+    <button type="submit">Submit Text</button>
+</form>

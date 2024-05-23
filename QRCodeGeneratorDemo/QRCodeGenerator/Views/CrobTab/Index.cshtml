@@ -1,0 +1,144 @@
+﻿@model CrobTabInput;
+<main class="Centerialize">
+@{
+    ViewData["TItle"] = "CrobTab Tool";
+}
+    <div>
+        <h3>Dear Tega we welcome you to crobTab project....</h3>
+        <h6>CronTab Game</h6>
+    </div>
+
+<h4>
+    @{
+        var outputHtml = (Model.InputString == null) ? " " : $"<h3>{Model.InputString}</h3>";
+        // var outputHtml = (Model.InputString == null) ? "<h4>No string to output yet</h4>" : $"<h3>{Model.InputString}</h3>";
+    }
+</h4>
+   <div class="formValues">
+        <form asp-controller="CrobTab" asp-action="Index" method="post" class="form">
+            <input id="InputBoxStyle" asp-for="@Model.InputString" style="" value="* * * * *" />
+         
+
+            <div>
+
+                @Html.Raw(outputHtml)
+                @if (@Model.ArraystringBroken != null)
+                {
+                    @foreach (var item in @Model.ArraystringBroken)
+                    {
+                        <h4>@item</h4>
+                    }
+                }
+                @if (Model.ArraystringBrokenRR != null)
+                {
+                    <h5>@Model.ArraystringBrokenRR</h5>
+                }
+                <h4> @Model.OutputValue</h4>
+            </div>
+        </form>
+        <table>
+            <tr>
+             <td> minute</td>
+            <td>hour</td>
+            <td>days</td>
+            <td>month</td>
+            <td>days of the week</td>
+            </tr>
+        </table>
+</div>
+
+    @* <div> *@
+        @* <h1>Top England Goal Scorers</h1> *@
+
+        <table class="zigzag">
+            <thead>
+                <tr>
+                    <th class="header">Symbols</th>
+                    <th class="header">Meaning</th>
+                   @*  <th class="header">First</th>
+                    <th class="header">Latest</th> *@
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>*</td>
+                    <td>any value</td>
+                </tr>
+                <tr>
+                    <td>,</td>
+                    <td>value list separator</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>range of values</td>
+
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>step values</td>
+                </tr>
+               @*  <tr>
+                    <td>Wayne Rooney</td>
+                    <td>53</td>
+                    <td>06 Sep 2003</td>
+                    <td>27 Jun 2016</td>
+                </tr>
+                <tr>
+                    <td>Bobby Charlton</td>
+                    <td>49</td>
+                    <td>19 Apr 1958</td>
+                    <td>20 May 1970</td>
+                </tr>
+                <tr>
+                    <td>Gary Lineker</td>
+                    <td>48</td>
+                    <td>26 Mar 1985</td>
+                    <td>29 Apr 1992</td>
+                </tr>
+                <tr>
+                    <td>Jimmy Greaves</td>
+                    <td>44</td>
+                    <td>17 May 1959</td>
+                    <td>24 May 1967</td>
+                </tr>
+                <tr>
+                    <td>Michael Owen </td>
+                    <td>40</td>
+                    <td>27 May 1998</td>
+                    <td>12 Sep 2007</td>
+                </tr>
+                <tr>
+                    <td>Alan Shearer</td>
+                    <td>30</td>
+                    <td>19 Feb 1992</td>
+                    <td>20 Jun 2000</td>
+                </tr> *@
+             @*    <tr>
+                    <td>Tom Finney</td>
+                    <td>30</td>
+                    <td>28 Sep 1946</td>
+                    <td>04 Oct 1958</td>
+                </tr>
+                <tr>
+                    <td>Nat Lofthouse</td>
+                    <td>30</td>
+                    <td>22 Nov 1950</td>
+                    <td>22 Oct 1958</td>
+                </tr>
+                <tr>
+                    <td>Vivian Woodward</td>
+                    <td>29</td>
+                    <td>14 Feb 1903</td>
+                    <td>13 Mar 1911</td>
+                </tr>
+                <tr>
+                    <td>Frank Lampard</td>
+                    <td>29</td>
+                    <td>20 Aug 2003</td>
+                    <td>29 May 2013</td>
+                </tr> *@
+            </tbody>
+        </table>
+    @* </div> *@
+
+</main>

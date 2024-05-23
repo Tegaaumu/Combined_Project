@@ -1,0 +1,27 @@
+﻿@model QrCodeInput;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>
+    @ViewData["Title"]
+</h2>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-action="Index" asp-controller="Home" method="post">
+
+    <div>
+
+        <div style="width:250px; height:250px;">
+            <img style="width:250px; height:250px;" src="@Model.CombinedPart" alt="Alternate Text" width="300" height="300" title="@Model.ImageAddress" />
+        </div>
+
+        @* <div>@Model.CombinedPart\@Model.ImageAddress</div> *@
+
+        <input type="text" asp-for="@Model.Text" title="@Model.ImageAddress" />
+    </div>
+
+    <button type="submit">Generate Text</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ShortenedUrl>
+    <table class="rwd-table" style="display:flex; align-item:center;justify-content:center;">
+  <tr style="margin-bottom:15px;">
+    <th>Shorten Urls</th>
+  </tr>
+    @{
+        if(Model.Any() == true){
+             foreach (var items in Model)
+             {
+             <tr>
+              <td data-th="Movie Title"><a href="@items.ShortUrl">@items.ShortUrl</td>
+              </tr>
+             }
+         }else{
+             <tr>
+              <td data-th="Movie Title"><h6>No item is found in this database.</h6></td>
+              </tr>
+        }
+
+     }
+</table>
+

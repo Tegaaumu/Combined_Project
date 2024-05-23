@@ -1,0 +1,31 @@
+﻿@model ShortenedUrl
+
+<div class="Urlbody">
+    <div class="login-box">
+        <h3> Url Shortener</h3>
+        @* //Ommition of the method="post" you will not recieve the information from the form *@
+        <form asp-controller="UrlShortener" asp-action="CreateUrl" method="post">
+            <div class="user-box">
+                <input asp-for="@Model.LongUrl" type="text" name="LongUrl" required="">
+                <label>Url</label>
+            </div>
+            <div class="user-box">
+                <input asp-for="@Model.ShortUrl" type="text" disabled name="ShortUrl" required="">
+                @if(Model?.ShortUrl == null || Model.ShortUrl.Trim() == "")
+                {
+                    <label>Short Url</label>
+                }
+                else{
+                    <label>@Model.ShortUrl</label>
+                }
+                </div>
+            <button class="ColorfulButton" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
